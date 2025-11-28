@@ -91,9 +91,9 @@ The system has three types of employee logins:
 2. Start **Apache + MySQL**  
 3. Copy the php files in Hotel_website to htdocs/HotelManagementSystem/ in your XAMPP folder in local file system
 4. Create database:
-```sql
+```sql 
 CREATE DATABASE hotel_management;
-'''
+```
 5. Import SQL file /SQL Data/Hotel_Management_SQL.sql in your created database
 6. Update database credentials in db_conn.php
 7. Open in browser:

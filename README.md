@@ -35,7 +35,7 @@ The system has three types of employee logins:
    - View rooms marked as "Under Maintenance"
    - Update room status to "Available" after cleaning
 
-### 🛏 Room Booking Module
+###  Room Booking Module
 - Guests can view available rooms
 - Select room type, number of guests, and stay duration
 - Optional paid services (laundry, food, etc.)
@@ -55,7 +55,7 @@ The system has three types of employee logins:
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -67,7 +67,7 @@ The system has three types of employee logins:
 
 ---
 
-## 📂 Database Structure
+##  Database Structure
 
 | Table | Purpose |
 |-------|---------|
@@ -85,7 +85,7 @@ The system has three types of employee logins:
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 1. Install **XAMPP/WAMP/MAMP**  
 2. Start **Apache + MySQL**  

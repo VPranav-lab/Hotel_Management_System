@@ -93,6 +93,7 @@ The system has three types of employee logins:
 4. Create database:
 ```sql
 CREATE DATABASE hotel_management;
+'''
 5. Import SQL file /SQL Data/Hotel_Management_SQL.sql in your created database
 6. Update database credentials in db_conn.php
 7. Open in browser:

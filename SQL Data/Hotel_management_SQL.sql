@@ -42,8 +42,27 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (3070,'Giovanni','Rossi','89a1169b404795aaae43fbf6d13b07f795eb7794c78c6b67c24f9457aad84ea5','General Manager',70000.00,'giovanni.rossi@gmail.com','+39 320 123 4567'),(3071,'Alessandro','Bianchi','5912242b3ce32ecfe75c0dec35836a44575b582171d45b601dd73ca4735a7aa1','Receptionist',30000.00,'alessandro.bianchi@gmail.com','+39 321 234 5678'),(3072,'Francesca','Romano','3f513773953db203e7f916372be1dd8504bdb3aec09b9e9f6827813fd8316153','Receptionist',30000.00,'francesca.romano@gmail.com','+39 322 345 6789'),(3073,'Luca','Moretti','a622d3a16d70c15b4c96649e94855caca076e3198404ad83f50ea21bcb529386','Receptionist',30000.00,'luca.moretti@gmail.com','+39 323 456 7890'),(3074,'Martina','Ricci','5eb4a2d5a6405ac04b6f556a12f65c0df7215753a6650036e06ff998d1150a24','Receptionist',30000.00,'martina.ricci@gmail.com','+39 324 567 8901'),(3075,'Stefano','Conti','3186877d0625dbd85b2a227f42491a161899ecb5d2eefed4d90f6ee042365afb','Housekeeping',25000.00,'stefano.conti@gmail.com','+39 325 678 9012'),(3076,'Giulia','Gallo','835bccae865deb0b166c9e4f0b99241885e0079903c0e2683b811365acaeb304','Housekeeping',25000.00,'giulia.gallo@gmail.com','+39 326 789 0123'),(3077,'Marco','Ferrari','6eb75519bfc4fdb6680e76e2591054a57af41c1be9fa11cac96866e9c3209bb9','Housekeeping',25000.00,'marco.ferrari@gmail.com','+39 327 890 1234'),(3078,'Elena','Marino','4d5ef2ff1e02ae030856d0548399134a23181ebdbf5ca31999424f77411e1ffa','Housekeeping',32000.00,'elena.marino@gmail.com','+39 328 901 2345'),(3079,'Davide','Lombardi','c4a3be4a4a75e988068937140237c688c3835978248998d65729b981db2e585e','Chef',40000.00,'davide.lombardi@gmail.com','+39 329 012 3456'),(3080,'Roberta','Barbieri','791d125344f0fa050b41ec086140851e3be6203e1ab286615561851785fb3add','Chef',40000.00,'roberta.barbieri@gmail.com','+39 330 123 4567'),(3081,'Simone','De Luca','fb79d9d061c088117556bfccb53c6b72a3816ebe584995fc7e2a14a561e8e406','Room service attedant',28000.00,'simone.deluca@gmail.com','+39 331 234 5678'),(3082,'Valentina','Greco','4b8c9778425d6d403b3b347154cee097a47f2f61731c742313ebe8b44780f2f7','Room service attedant',28000.00,'valentina.greco@gmail.com','+39 332 345 6789'),(3083,'Antonio','Rizzo','53d644464fa7233b26d338551a48cc1c359f207e18d11ea7cad1a05e79efb6ca','Room service attedant',28000.00,'antonio.rizzo@gmail.com','+39 333 456 7890');
-/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+INSERT INTO employees (first_name, last_name, password, position, salary, email, mobile)
+VALUES
+    ('Giovanni', 'Rossi', SHA2('Giovanni@123', 256), 'General Manager', 70000.00, 'giovanni.rossi@gmail.com', '+39 320 123 4567'),
+    
+    ('Alessandro', 'Bianchi', SHA2('Alessandro@123', 256), 'Receptionist', 30000.00, 'alessandro.bianchi@gmail.com', '+39 321 234 5678'),
+    ('Francesca', 'Romano', SHA2('Francesca@123', 256), 'Receptionist', 30000.00, 'francesca.romano@gmail.com', '+39 322 345 6789'),
+    ('Luca', 'Moretti', SHA2('Luca@123', 256), 'Receptionist', 30000.00, 'luca.moretti@gmail.com', '+39 323 456 7890'),
+    ('Martina', 'Ricci', SHA2('Martina@123', 256), 'Receptionist', 30000.00, 'martina.ricci@gmail.com', '+39 324 567 8901'),
+
+    ('Stefano', 'Conti', SHA2('Stefano@123', 256), 'Housekeeping', 25000.00, 'stefano.conti@gmail.com', '+39 325 678 9012'),
+    ('Giulia', 'Gallo', SHA2('Giulia@123', 256), 'Housekeeping', 25000.00, 'giulia.gallo@gmail.com', '+39 326 789 0123'),
+    ('Marco', 'Ferrari', SHA2('Marco@123', 256), 'Housekeeping', 25000.00, 'marco.ferrari@gmail.com', '+39 327 890 1234'),
+
+    ('Elena', 'Marino', SHA2('Elena@123', 256), 'Housekeeping Supervisor', 32000.00, 'elena.marino@gmail.com', '+39 328 901 2345'),
+
+    ('Davide', 'Lombardi', SHA2('Davide@123', 256), 'Chef', 40000.00, 'davide.lombardi@gmail.com', '+39 329 012 3456'),
+    ('Roberta', 'Barbieri', SHA2('Roberta@123', 256), 'Chef', 40000.00, 'roberta.barbieri@gmail.com', '+39 330 123 4567'),
+
+    ('Simone', 'De Luca', SHA2('Simone@123', 256), 'Room service attedant', 28000.00, 'simone.deluca@gmail.com', '+39 331 234 5678'),
+    ('Valentina', 'Greco', SHA2('Valentina@123', 256), 'Room service attedant', 28000.00, 'valentina.greco@gmail.com', '+39 332 345 6789'),
+    ('Antonio', 'Rizzo', SHA2('Antonio@123', 256), 'Room service attedant', 28000.00, 'antonio.rizzo@gmail.com', '+39 333 456 7890');/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -64,15 +83,6 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `feedback`
---
-
-LOCK TABLES `feedback` WRITE;
-/*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
-INSERT INTO `feedback` VALUES ('Srishthi','Haldar',162,5,'satisfied');
-/*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `guest_services`
@@ -93,16 +103,6 @@ CREATE TABLE `guest_services` (
   CONSTRAINT `guest_services_chk_1` CHECK ((`quantity` > 0))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `guest_services`
---
-
-LOCK TABLES `guest_services` WRITE;
-/*!40000 ALTER TABLE `guest_services` DISABLE KEYS */;
-INSERT INTO `guest_services` VALUES (1023,4001,1,60),(1023,4002,2,30),(1024,4000,3,75),(1024,4002,1,15),(1024,4003,1,40),(1024,4004,1,50),(1025,4001,1,60),(1025,4004,1,50),(1027,4001,15,900),(1027,4004,10,500),(1027,4010,19,95);
-/*!40000 ALTER TABLE `guest_services` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `guests`
@@ -130,15 +130,6 @@ CREATE TABLE `guests` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1029 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `guests`
---
-
-LOCK TABLES `guests` WRITE;
-/*!40000 ALTER TABLE `guests` DISABLE KEYS */;
-INSERT INTO `guests` VALUES (1022,'pranav','varanganti','pranav123','89bff213afe64538eb867582d43826c69d6d5ee8eaf8257038fc70b5c8c818fc',20,'Passport','S568476','3594876521','pranav@gmail.com','via francesco basile, 10,98158, ME'),(1023,'aman','singh','aman123','5d7e4e5b8dca9a9ac4575654ff707580a1aad73c27c02ae56b780bd32758c822',24,'Passport','f65465','3286492571','amankumar@gmail.com','via francesco basile, 10, 98158, ME'),(1024,'Somya','Haldar','Somya11','91bcd1f6c58e5705840112f84a8f47b39a322c0c68774a1f8f377f2d90cf64bc',20,'Passport','T254631','3516542468','haldarsomya@gmail.com','via miracoli'),(1025,'srishthi','Haldar','srishthi123','6034895afda08cf77296e72fd77cb75b93b88bdfb95305b04edd5fe3cc5d0cbf',19,'Passport','S54354','2545641358','srishthi@gmail.com','2-73, UAE.'),(1026,'meroj','mini','minii_mero','5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8',21,'Passport','FE4585','398751545','meroj@gmail.com','via frncesco'),(1027,'Ermek','Beis','DUNGEON_MASTER69','08a65c24a16db79fb6efd4845681cd66e5e1a2bde3f4dfc2dcbfaf6dd620e951',21,'Driving License','F22871','3513427721','clearclearx@gmail.com','San Via Leonardi 26'),(1028,'antonio','celesti','celesti123','5cd9e379f4a0b2bb4f691bcb6789bdf5378f456a79692c7baa2e99ed0cc93084',30,'Passport','G542154','35124561413','celesti@gmail.com','via francesco basile,10');
-/*!40000 ALTER TABLE `guests` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `payments`
@@ -163,15 +154,7 @@ CREATE TABLE `payments` (
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `payments`
---
 
-LOCK TABLES `payments` WRITE;
-/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
-INSERT INTO `payments` VALUES (29,29,40,90,130,'2025-04-09','Debit Card'),(30,30,210,180,390,'2025-05-05','Credit Card'),(31,31,105,110,215,'2025-06-11','Debit Card'),(32,32,770,0,770,'2025-06-12','Credit Card'),(33,33,1870,1495,3365,'2025-06-12','Debit Card');
-/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `reservations`
@@ -196,15 +179,7 @@ CREATE TABLE `reservations` (
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `reservations`
---
 
-LOCK TABLES `reservations` WRITE;
-/*!40000 ALTER TABLE `reservations` DISABLE KEYS */;
-INSERT INTO `reservations` VALUES (29,1023,151,'2025-04-17','2025-04-19','Online','Cancelled'),(30,1024,161,'2025-05-24','2025-05-30','Online','Confirmed'),(31,1025,162,'2025-06-26','2025-06-29','Online','Cancelled'),(32,1026,181,'2025-06-12','2025-06-26','Online','Confirmed'),(33,1027,182,'2025-06-19','2025-07-23','Online','Cancelled');
-/*!40000 ALTER TABLE `reservations` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `room_type`
